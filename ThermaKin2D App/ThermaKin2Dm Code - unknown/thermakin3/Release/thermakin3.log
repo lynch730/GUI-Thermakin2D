@@ -1,0 +1,17 @@
+﻿  1D_Model.cpp
+  2D_Model.cpp
+  Boundary.cpp
+  Boundary2D.cpp
+  Components.cpp
+  Element.cpp
+  InOutput.cpp
+  Mixtures.cpp
+  Properties.cpp
+  Reaction.cpp
+  Solver.cpp
+  ThermaKin.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 703 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  thermakin3.vcxproj -> C:\Users\lynch\Documents\GitHub\GUI-Thermakin2D\ThermaKin2D App\ThermaKin2Dm Code - unknown\thermakin3\Release\thermakin3.exe

@@ -1,0 +1,22 @@
+ThermaKin Program Version 4
+
+Components file:  pmma.cmp
+Conditions file:  pmma.cnd
+
+Number of components:  6
+Number of reactions:  2
+Mixture rules assigned:  yes
+
+Object type:  1D
+
+Top Boundary
+External radiation:  off
+Mass transport:  off
+Ignition:  off
+
+Bottom Boundary
+External radiation:  off
+Mass transport:  off
+Ignition:  off
+
+Error:  cannot read description of top boundary

@@ -1,0 +1,17 @@
+-r
+C:\Users\lynch\Documents\GitHub\GUI-Thermakin2D\ThermaKin2D App\ThermaKin2Dm Code - unknown\thermakin3\Intel® VTune™ Profiler Results\thermakin3\r001hs
+--stack-stitching
+--data-limit-mb=1000
+--disk-space-limit=0
+--mrte-type=java,dotnet,python
+--stack-unwind-limit=8388608
+--itt-config=frame
+--itt-config=task,event,counter
+--stackwalk=offline
+--mrte-mode=auto
+--type=cpu:counters:nostack
+--type=cpu:stack
+--interval=10
+--app-working-dir=C:\Users\lynch\Documents\GitHub\GUI-Thermakin2D\ThermaKin2D App\ThermaKin2Dm Code - unknown\thermakin3\
+--
+C:\Users\lynch\Documents\GitHub\GUI-Thermakin2D\ThermaKin2D App\ThermaKin2Dm Code - unknown\thermakin3\Release\thermakin3.exe
