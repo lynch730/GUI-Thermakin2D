@@ -61,7 +61,12 @@ bool Bound::load(std::istringstream& boundpar,std::string name)
 	{
 		do { if(!(boundpar>>buf)) { return false; } } while(buf!="OUTSIDE");
 	}
-	
+
+	if (!((boundpar >> buf) && (buf == "INIT") && (boundpar >> buf) && (buf == "TEMP:") &&
+		(boundpar >> outT_0) )) {
+		return false;
+	}
+
 	if(!((boundpar>>buf)&&(buf=="INIT")&&(boundpar>>buf)&&(buf=="TEMP:")&&
 		 (boundpar>>outT_0)&&(boundpar>>buf)&&(buf=="OUTSIDE")&&(boundpar>>buf)&&
 		 (buf=="HEAT")&&(boundpar>>buf)&&(buf=="RATE:")&&(boundpar>>outT_rt[0])&&

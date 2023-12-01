@@ -68,29 +68,31 @@ void OneD_model::load(std::istringstream& conds)
 					else if(!(conds>>buf)) { read=false; break; }
 				} while((buf!="OBJECT")&&(buf!="INTEGRATION"));
 			}
-			else if((buf=="BOUNDARIES")&&(conds>>buf))
-			{
+			else if((buf=="BOUNDARIES")&&(conds>>buf)) {
 				do
 				{
-					if((buf=="TOP")&&(conds>>buf)&&(buf=="BOUNDARY"))
-					{
+					if((buf=="TOP")&&(conds>>buf)&&(buf=="BOUNDARY")) {
 						if(!topB.load(conds,"TOP     "))
 						{
 							throw loadErr("cannot read description of top boundary");
 						}
 						else { topB_load=true; }
 					}
-					else if((buf=="BOTTOM")&&(conds>>buf)&&(buf=="BOUNDARY"))
-					{
-						if(!botB.load(conds,"BOTTOM  "))
-						{
+					else if((buf=="BOTTOM")&&(conds>>buf)&&(buf=="BOUNDARY")) {
+						if(!botB.load(conds,"BOTTOM  ")) {
 							throw loadErr("cannot read description of bottom boundary");
 						}
-						else { botB_load=true; }
+						else { 
+							botB_load=true; 
+						}
 					}
 				} while((buf!="OBJECT")&&(buf!="INTEGRATION")&&(conds>>buf));
 			}
-			else { if(!(conds>>buf)) { read=false; } }
+			else { 
+				if(!(conds>>buf)) {
+					read = false;
+				} 
+			}
 		}
 		else if((buf=="INTEGRATION")&&(conds>>buf)&&(buf=="PARAMETERS")&&(conds>>buf))
 		{
@@ -98,22 +100,16 @@ void OneD_model::load(std::istringstream& conds)
 			{
 				if((buf=="ELEMENT")&&(conds>>buf)&&(buf=="SIZE:"))
 				{
-					if(!((conds>>Elem_setSize)&&
-						 (conds>>buf)&&(buf=="TIME")&&(conds>>buf)&&(buf=="STEP:")&&
-						 (conds>>tmestep)&&
-						 (conds>>buf)&&(buf=="DURATION:")&&(conds>>tmelimit)&&
-						 (conds>>buf)&&(buf=="OUTPUT")&&(conds>>buf)&&(buf=="FREQUENCY:")&&
-						 (conds>>buf)&&(buf=="ELEMENTS:")&&(conds>>outfreq_Elem)&&
-						 (conds>>buf)&&(buf=="TIME")&&(conds>>buf)&&(buf=="STEPS:")&&
-						 (conds>>outfreq_tme)))
-					{
-						throw loadErr("cannot read description of integration parameters");
-					}
-					else { tmstp_vs2=tmestep/2.0; intP_load=true; }
+					tmstp_vs2 = tmestep / 2.0; 
+					intP_load = true; 
 				}
 			} while((buf!="OBJECT")&&(buf!="INTEGRATION")&&(conds>>buf));
 		}
-		else { if(!(conds>>buf)) { read=false; } }
+		else {
+			if (!(conds>>buf)) {
+				read = false; 
+			} 
+		}
 	}
 	
 	if(!Num_Elem) { throw loadErr("cannot find description of object structure"); }

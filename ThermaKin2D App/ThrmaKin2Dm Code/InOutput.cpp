@@ -5,7 +5,8 @@ bool InOut::read_files()
 	std::cout<<"ThermaKin Program Version "<<Consts::VERSION
 		     <<"\n\nEnter name of components file:  ";
 	std::string c_fname;
-	std::cin>>c_fname;
+	c_fname = "pmma.cmp";
+	// std::cin>>c_fname;
 	
 	std::ifstream c_file(c_fname.c_str());
 	if(!c_file)
@@ -27,7 +28,8 @@ bool InOut::read_files()
 	
 	std::cout<<"\nEnter name of conditions file:  ";
 	std::string d_fname;
-	std::cin>>d_fname;
+	d_fname = "pmma.cnd";
+	//std::cin>>d_fname;
 	
 	std::ifstream d_file(d_fname.c_str());
 	if(!d_file)
@@ -48,8 +50,10 @@ bool InOut::read_files()
 	
 	std::cout<<"\nEnter name of output file:  ";
 	std::string o_fname;
-	std::cin>>o_fname;
+	o_fname = "data.out";
+	//std::cin>>o_fname;
 	
+	/*
 	std::ifstream o_file(o_fname.c_str());
 	if(o_file)
 	{
@@ -58,6 +62,7 @@ bool InOut::read_files()
 		std::cin.sync(); std::cin.ignore();
 		return false;
 	}
+	*/
 	
 	out.open(o_fname.c_str());
 	if(!out)

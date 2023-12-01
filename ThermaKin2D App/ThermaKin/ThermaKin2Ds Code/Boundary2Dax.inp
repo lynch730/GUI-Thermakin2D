@@ -1,0 +1,37 @@
+This is an example of text input describing 2-dimensional axisymmetric object boundary conditions. The Bound2Dax::load function expects this format.
+
+MASS TRANSPORT:  YES
+PMMA_G  LIN  0.05  0
+
+EXTERNAL HEAT FLUX 1:  YES
+START & END TIMES:  0  70
+RAMP:  HOLD
+MODE:  CONV
+CONVECTION COEFF:  20
+POSITION DEPEND1:  0  0  0.01
+POSITION DEPEND2:  1.5e3  5e4  0.03
+POSITION DEPEND3:  3e3  0  0.04
+
+EXTERNAL HEAT FLUX 2:  YES
+START & END TIMES:  80  200
+RAMP:  DOWN
+MODE:  RAD
+POSITION DEPEND1:  0  0  0.01
+POSITION DEPEND2:  1.5e4  5e5  0.03
+POSITION DEPEND3:  3e4  0  0.04
+
+EXTERNAL HEAT FLUX 3:  NO
+
+CAPA HEAT FLUX:  YES
+START & END TIMES:  0  200
+OUTSIDE TEMP HIST:  53  0  0  0
+CONV COEFF POS DEPEND:  2  170
+RADIATION SETPOINT:  5e4
+VERT RAD DEPEND:  0.006  11  -250
+RADIAL RAD DEPEND:  -0.24  66  -1570  -36  810  6.4e4
+ANGUL RAD DEPEND:  -0.44  6.5  300  -0.029  -3.4  -120
+
+BACKGROUND TEMP:  300
+RADIAT ABSORPT MODE:  MAX
+
+Times and positions must always be non-negative. Heat flux ramp should be UP, DOWN or HOLD. Heat flux mode should be CONV or RAD. Absorption mode should be MAX or RAND.
